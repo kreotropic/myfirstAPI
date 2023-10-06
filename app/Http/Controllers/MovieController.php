@@ -128,6 +128,7 @@ class MovieController extends Controller
             $movie->actors()->detach();
             $movie->genres()->detach();
             $movie->delete();
+
             return response()->json(['message' => 'Deleted'], 205);
         } catch (Exception $exception) {
             return response()->json(['error' => $exception], 500);
